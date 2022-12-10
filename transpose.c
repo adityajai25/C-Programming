@@ -1,55 +1,31 @@
-#include<stdio.h>
-int main()
-{
-    int org[10][10],trans[10][10],row,col,flag=1;
-    printf("\n Enter the number of rows and columns :");
-    scanf("%d %d",&row,&col);
-    printf("\n Enter matrix elements:");
-    for(int i=0;i<row;++i)
-    {
-        for(int j=0;j<col;++j)
-        {
-            printf("Enter element for %d %d:",i+1,j+1);
-            scanf("%d",&org[i][j]);
-        }
-    }
-    printf("\nEntered matrix: \n");
-    for (int i = 0; i < row; ++i)
-    {
-        for (int j = 0; j < col; ++j) 
-        {
-            printf("%d \t", org[i][j]);
-        }
-        printf("\n");
-    }
-    for(int i=0;i<row;++i)
-    {
-        for(int j=0;j<col;++j)
-        {
-            trans[j][i]=org[i][j];
-        }
-    }
-    printf("\n TRANSPOSED MATRIX: \n");
-    for (int i = 0; i < col; ++i)
-    {
-        for (int j = 0; j < row; ++j)
-        {
-           printf("%d \t", trans[i][j]);
-           if(org[10][10]==trans[10][10])
-    {
-        flag==0;
-        
-    }         
-        }
+#include <stdio.h>
+int main() {
+  int a[10][10], transpose[10][10], r, c;
+  printf("Enter rows and columns: ");
+  scanf("%d %d", &r, &c);
+  printf("\nEnter matrix elements:\n");
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j) {
+    printf("Enter element a%d%d: ", i + 1, j + 1);
+    scanf("%d", &a[i][j]);
+  }
+  printf("\nEntered matrix: \n");
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j) {
+    printf("%d  ", a[i][j]);
+    if (j == c - 1)
     printf("\n");
-    }
-    if(flag==0)
-    {
-        printf("\n SYMMETRIC");
-    }
-    else
-    {
-        printf("\n Matrix is not symmetric");
-    }
-    return 0;
+  }
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j) {
+    transpose[j][i] = a[i][j];
+  }
+  printf("\nTranspose of the matrix:\n");
+  for (int i = 0; i < c; ++i)
+  for (int j = 0; j < r; ++j) {
+    printf("%d  ", transpose[i][j]);
+    if (j == r - 1)
+    printf("\n");
+  }
+  return 0;
 }
